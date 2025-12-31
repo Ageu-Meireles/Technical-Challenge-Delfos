@@ -13,7 +13,9 @@ dependencies = [
     "sqlmodel (>=0.0.31,<0.0.32)",
     "sqlalchemy (>=2.0.45,<3.0.0)",
     "psycopg2 (>=2.9.11,<3.0.0)",
-    "alembic (>=1.17.2,<2.0.0)"
+    "alembic (>=1.17.2,<2.0.0)",
+    "httpx (>=0.28.1,<0.29.0)",
+    "pandas (>=2.3.3,<3.0.0)"
 ]
 
 [tool.poetry]
