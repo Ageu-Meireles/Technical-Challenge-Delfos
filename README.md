@@ -78,10 +78,18 @@ The API routes and endpoints are properly documented in the Swagger UI accessibl
 - **Period**: 10 consecutive days (2025-01-01 to 2025-01-10)
 - **Table**: `data`
 
+**Source Database Schema:**
+
+![Source Database Schema](./images/source_db_schema.svg)
+
 #### Target Database (aggregated data)
 - **Frequency**: 10 minutes
 - **Aggregations**: mean, min, max, std
 - **Tables**: `signal` and `data`
+
+**Target Database Schema:**
+
+![Target Database Schema](./images/target_db_schema.svg)
 
 ### Running ETL Manually
 
