@@ -40,6 +40,23 @@ services:
     volumes:
       - ./api/src:/app/src
 
+  dagster:
+    build:
+      context: ./etl
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      SOURCE_API_URL: http://api:8000
+      TARGET_DB_URL: postgresql+psycopg2://${TARGET_DB_USER}:${TARGET_DB_PASSWORD}@target_db:5432/${TARGET_DB_NAME}
+    depends_on:
+      - api
+      - target_db
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./etl/src:/app/src
+      - ./etl/dagster.yaml:/opt/dagster/dagster_home/dagster.yaml
+
 volumes:
   source_db_data:
   target_db_data:
