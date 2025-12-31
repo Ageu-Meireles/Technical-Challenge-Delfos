@@ -23,6 +23,22 @@ services:
     ports:
       - "${TARGET_DB_PORT}:5432"
 
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      SOURCE_DB_URL: postgresql+psycopg2://${SOURCE_DB_USER}:${SOURCE_DB_PASSWORD}@source_db:5432/${SOURCE_DB_NAME}
+    depends_on:
+      - source_db
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./api/src:/app/src
+
 volumes:
   source_db_data:
   target_db_data:
