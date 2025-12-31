@@ -20,6 +20,7 @@ services:
       POSTGRES_PASSWORD: ${TARGET_DB_PASSWORD}
     volumes:
       - target_db_data:/var/lib/postgresql/data
+      - ./etl/src/db/seeders:/docker-entrypoint-initdb.d
     ports:
       - "${TARGET_DB_PORT}:5432"
 
