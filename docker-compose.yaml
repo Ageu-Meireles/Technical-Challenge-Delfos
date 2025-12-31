@@ -1,0 +1,28 @@
+services:
+  source_db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${SOURCE_DB_NAME}
+      POSTGRES_USER: ${SOURCE_DB_USER}
+      POSTGRES_PASSWORD: ${SOURCE_DB_PASSWORD}
+    volumes:
+      - source_db_data:/var/lib/postgresql/data
+    ports:
+      - "${SOURCE_DB_PORT}:5432"
+
+  target_db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${TARGET_DB_NAME}
+      POSTGRES_USER: ${TARGET_DB_USER}
+      POSTGRES_PASSWORD: ${TARGET_DB_PASSWORD}
+    volumes:
+      - target_db_data:/var/lib/postgresql/data
+    ports:
+      - "${TARGET_DB_PORT}:5432"
+
+volumes:
+  source_db_data:
+  target_db_data:
