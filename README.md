@@ -317,3 +317,68 @@ This repository contains **all design decisions and execution instructions** req
 ## License
 
 This project was developed as part of a technical assessment.
+
+## References
+
+### Libraries and Frameworks
+
+- **FastAPI** - Modern, fast web framework for building APIs with Python
+  - https://fastapi.tiangolo.com/
+
+- **SQLModel** - SQL toolkit that provides SQLAlchemy + Pydantic integration
+  - https://sqlmodel.tiangolo.com/
+
+- **SQLAlchemy** - Python SQL toolkit and Object-Relational Mapping (ORM) library
+  - https://www.sqlalchemy.org/
+
+- **Alembic** - Database migration tool for SQLAlchemy
+  - https://alembic.sqlalchemy.org/
+
+- **Pydantic Settings** - Settings management using Pydantic
+  - https://docs.pydantic.dev/latest/concepts/pydantic_settings/
+
+- **psycopg2** - PostgreSQL database adapter for Python
+  - https://www.psycopg.org/docs/
+
+- **httpx** - Async HTTP client for Python
+  - https://www.python-httpx.org/
+
+- **pandas** - Data manipulation and analysis library
+  - https://pandas.pydata.org/
+
+- **NumPy** - Fundamental package for scientific computing with Python
+  - https://numpy.org/
+
+- **Dagster** - Data orchestration platform
+  - https://dagster.io/
+
+- **Poetry** - Python dependency management and packaging tool
+  - https://python-poetry.org/
+
+### Development Tools
+
+- **Black** - Code formatter for Python
+  - https://black.readthedocs.io/
+
+- **isort** - Python utility to sort imports
+  - https://pycqa.github.io/isort/
+
+- **flake8** - Linting tool for Python code
+  - https://flake8.pycqa.org/
+
+- **pytest** - Testing framework for Python
+  - https://docs.pytest.org/
+
+- **mixer** - Fixtures generator for testing
+  - https://mixer.readthedocs.io/
+
+### Infrastructure
+
+- **Docker** - Platform for developing, shipping, and running applications in containers
+  - https://www.docker.com/
+
+- **Docker Compose** - Tool for defining and running multi-container Docker applications
+  - https://docs.docker.com/compose/
+
+- **PostgreSQL** - Powerful, open source object-relational database system
+  - https://www.postgresql.org/
