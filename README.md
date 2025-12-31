@@ -48,7 +48,7 @@ This command will:
 - **Health Check**: http://localhost:8000/health
 - **ReDoc**: http://localhost:8000/redoc
 
-The API routes and endpoints are properly documented in the Swagger UI accessible at /docs.
+The API routes and endpoints are properly documented in the Swagger UI accessible at `/docs`.
 
 ### Databases
 
