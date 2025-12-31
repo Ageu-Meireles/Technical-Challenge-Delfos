@@ -1,5 +1,7 @@
 from datetime import datetime
-from sqlmodel import SQLModel, Field
+
+from sqlmodel import Field, SQLModel
+
 
 class Data(SQLModel, table=True):
     timestamp: datetime = Field(primary_key=True, index=True)

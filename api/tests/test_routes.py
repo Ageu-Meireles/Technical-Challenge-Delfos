@@ -1,14 +1,15 @@
-from fastapi.testclient import TestClient
 from datetime import datetime
 
+from fastapi.testclient import TestClient
+
 from src.db.models import Data
+
 
 class TestRoutes:
     def test_health_check(self, client: TestClient):
         response = client.get("/health")
         assert response.status_code == 200
         assert response.json() == {"status": "ok"}
-
 
     def test_start_after_end(self, client: TestClient):
         response = client.get(
@@ -32,7 +33,9 @@ class TestRoutes:
         assert response.status_code == 422
 
     def test_response_structure(self, client: TestClient, mixer):
-        mixer.blend(Data, timestamp=datetime(2025, 1, 2, 0, 0, 0), wind_speed=5.0)
+        mixer.blend(
+            Data, timestamp=datetime(2025, 1, 2, 0, 0, 0), wind_speed=5.0
+        )
         response = client.get(
             "/data",
             params={

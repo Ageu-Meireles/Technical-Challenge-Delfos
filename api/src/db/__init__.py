@@ -5,6 +5,7 @@ from src.core import settings
 
 engine = create_engine(settings.source_db_url)
 
+
 def get_session() -> Session:
     with Session(engine) as session:
         try:

@@ -1,13 +1,14 @@
 import pytest
 from fastapi.testclient import TestClient
-from sqlalchemy import create_engine
-from sqlmodel import SQLModel, Session
 from mixer.backend.sqlalchemy import Mixer
+from sqlalchemy import create_engine
 from sqlalchemy.pool import StaticPool
+from sqlmodel import Session, SQLModel
 
-from src.main import app
 from src.db import get_session
 from src.db.models import *
+from src.main import app
+
 
 @pytest.fixture(scope="function")
 def session():
@@ -18,7 +19,7 @@ def session():
         poolclass=StaticPool,
     )
     SQLModel.metadata.create_all(engine)
-    
+
     with Session(engine) as session:
         yield session
 
@@ -26,6 +27,7 @@ def session():
 @pytest.fixture(scope="function")
 def client(session) -> TestClient:
     """Create a test client with database dependency override"""
+
     def override_get_session():
         try:
             yield session
@@ -34,13 +36,14 @@ def client(session) -> TestClient:
             raise exc
         finally:
             session.close()
-    
+
     app.dependency_overrides[get_session] = override_get_session
-    
+
     with TestClient(app) as client:
         yield client
-    
+
     app.dependency_overrides.clear()
+
 
 @pytest.fixture(scope="function")
 def mixer(session: Session):
