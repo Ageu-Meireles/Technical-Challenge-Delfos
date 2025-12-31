@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project implements a complete ETL (Extract, Transform, Load) pipeline with microservices architecture, using FastAPI for the data API, PostgreSQL for storage, and an ETL process for data aggregation.
+This project implements a complete ETL (Extract, Transform, Load) pipeline, using FastAPI for the data API, PostgreSQL for storage, and an ETL process for data aggregation.
 
 ## Architecture
 
