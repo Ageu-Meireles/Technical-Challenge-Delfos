@@ -16,8 +16,10 @@ RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi
 
 COPY ./alembic.ini /app/
+COPY ./scripts /app
 
 EXPOSE 8000
 
 ENTRYPOINT alembic upgrade head \
+    && python3 seed.py \
     && uvicorn src.main:app --port 8000 --loop uvloop --host 0.0.0.0 
