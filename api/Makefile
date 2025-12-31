@@ -9,3 +9,6 @@ db-downgrade:
 
 run-dev:
 	fastapi run src/main.py
+
+seeds:
+	PYTHONPATH=. python3 scripts/seed.py $(ARGS)
