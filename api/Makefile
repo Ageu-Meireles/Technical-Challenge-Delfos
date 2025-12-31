@@ -1,3 +1,6 @@
+test:
+	pytest
+
 db-migrations:
 	alembic revision --autogenerate -m "$(MESSAGE)"
 
