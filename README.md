@@ -181,7 +181,7 @@ LIMIT 20;"
 ## Project Structure
 
 ```
-delfos/
+Technical-Challenge-Delfos/
 ├── api/                    # FastAPI application
 │   ├── src/
 │   │   ├── core/          # Configurations and utilities
@@ -281,7 +281,7 @@ cd ../etl && poetry install
 
 ```bash
 # inside the 'api' or 'etl' directory
-make db-migrate
+make db-migrations
 ```
 
 4. **Run migrations**
